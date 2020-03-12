@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D images slider</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="slider">
+        <figure class="left-img">
+            <img src="https://picsum.photos/id/180/400/200" alt="">
+        </figure>
+        <figure class="middle-img">
+            <img src="https://picsum.photos/id/201/400/200" alt="">
+        </figure>
+        <figure class="right-img">
+            <img src="https://picsum.photos/id/202/400/200" alt="">
+        </figure>
+        <figure class="hidden-right">
+            <img src="https://picsum.photos/id/203/400/200" alt="">
+        </figure>
+        <figure class="">
+            <img src="https://picsum.photos/id/204/400/200" alt="">
+        </figure>
+        <figure>
+            <img src="https://picsum.photos/id/100/400/200" alt="">
+        </figure>
+        <figure>
+            <img src="https://picsum.photos/id/206/400/200" alt="">
+        </figure>
+        <figure>
+            <img src="https://picsum.photos/id/160/400/200" alt="">
+        </figure>
+        <figure>
+            <img src="https://picsum.photos/id/208/400/200" alt="">
+        </figure>
+        <figure>
+            <img src="https://picsum.photos/id/98/400/200" alt="">
+        </figure>
+        <figure>
+            <img src="https://picsum.photos/id/38/400/200" alt="">
+        </figure>
+        <figure>
+            <img src="https://picsum.photos/id/68/400/200" alt="">
+        </figure>
+        <figure>
+            <img src="https://picsum.photos/id/45/400/200" alt="">
+        </figure>
+        <div class="controller">
+            <button class="pre">&lArr;</button>
+            <button class="next">&rArr;</button>
+        </div>
+
+    </div>
+    <script>
+        let imgs = document.querySelectorAll('figure')
+        let nextBtn = document.querySelector('.next')
+        let preBtn = document.querySelector('.pre')
+        nextBtn.addEventListener('click', nextImg)
+        preBtn.addEventListener('click', preImg)
+        imgs = [...imgs]
+        let len = imgs.length - 1
+        let middle = 1 //起始位置
+
+        function nextImg() { //下一張
+            if ((middle + 1) <= len - 2) {
+                middle++
+                classToggle()
+                btnToggle()
+            }
+            else {
+                return
+            }
+        }
+        function preImg() {  //上一張
+            if ((middle - 1) >= 0) {
+                middle--
+                classToggle()
+                btnToggle()
+            }
+            else {
+
+                return
+            }
+        }
+        function classToggle() {    //class切換
+            for (let i = 0; i < len - 1; i++) {
+                imgs[i].classList.toggle("hidden-left", i === middle - 2)
+                imgs[i].classList.toggle("left-img", i === middle - 1)
+                imgs[i].classList.toggle("middle-img", i === middle)
+                imgs[i].classList.toggle("right-img", i === middle + 1)
+                imgs[i].classList.toggle("hidden-right", i === middle + 2)
+            }
+        }
+        function btnToggle() {
+            preBtn.classList.toggle("btn-close", middle === 0)
+            nextBtn.classList.toggle("btn-close", middle === len - 2)
+        }
+    </script>
+</body>
+</html>
