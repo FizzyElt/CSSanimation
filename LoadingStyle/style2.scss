@@ -1,0 +1,97 @@
+//type12----------
+
+.trafficLight {
+  display: flex;
+  width: 200px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  justify-content: space-around;
+  border-radius: 50px;
+  background-color: rgb(12, 99, 0);
+  .light {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(66, 66, 66);
+  }
+  .light.red {
+    animation: trafficRed 5s linear infinite;
+  }
+  .light.green {
+    animation: trafficGreen 5s linear infinite;
+  }
+  .light.yellow {
+    animation: trafficYellow 5s linear infinite;
+  }
+}
+@keyframes trafficRed {
+  0% {
+    background-color: rgb(66, 66, 66);
+    box-shadow: none;
+  }
+  6% {
+    background-color: rgb(255, 62, 62);
+    box-shadow: 0 0 10px rgba(255, 60, 60, 0.8)
+  }
+  30% {
+    background-color: rgb(255, 62, 62);
+    box-shadow: 0 0 10px rgba(255, 69, 69, 0.8)
+  }
+  36% {
+    background-color: rgb(66, 66, 66);
+    box-shadow: none;
+  }
+  100% {
+    background-color: rgb(66, 66, 66);
+    box-shadow: none;
+  }
+}
+@keyframes trafficYellow {
+  0% {
+    background-color: rgb(66, 66, 66);
+    box-shadow: none;
+  }
+  36% {
+    background-color: rgb(66, 66, 66);
+    box-shadow: none;
+  }
+  42% {
+    background-color: rgb(255, 251, 0);
+    box-shadow: 0 0 10px rgba(251, 255, 45, 0.8);
+  }
+  52% {
+    background-color: rgb(255, 251, 0);
+    box-shadow: 0 0 10px rgba(251, 255, 45, 0.8);
+  }
+  58% {
+    background-color: rgb(66, 66, 66);
+    box-shadow: none;
+  }
+  100% {
+    background-color: rgb(66, 66, 66);
+    box-shadow: none;
+  }
+}
+@keyframes trafficGreen {
+  0% {
+    background-color: rgb(66, 66, 66);
+    box-shadow: none;
+  }
+  58% {
+    background-color: rgb(66, 66, 66);
+    box-shadow: none;
+  }
+  64% {
+    background-color: rgb(58, 255, 40);
+    box-shadow: 0 0 10px rgba(109, 255, 64, 0.8)
+  }
+  94% {
+    background-color: rgb(58, 255, 40);
+    box-shadow: 0 0 10px rgba(109, 255, 64, 0.8)
+  }
+  100% {
+    background-color: rgb(66, 66, 66);
+    box-shadow: none;
+  }
+}

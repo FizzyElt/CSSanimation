@@ -905,7 +905,6 @@ body {
   span {
     position: absolute;
     display: block;
-    
   }
   .hour-bar {
     top: 15px;
@@ -914,7 +913,7 @@ body {
     height: 35px;
     background-color: white;
     border-radius: 5px;
-    transform-origin:3px bottom;
+    transform-origin: 3px bottom;
     animation: pointerRotate 12s linear infinite;
   }
   .min-bar {
@@ -924,7 +923,7 @@ body {
     height: 48px;
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
-    transform-origin:2px bottom ;
+    transform-origin: 2px bottom;
     animation: pointerRotate 1s linear infinite;
   }
 }
@@ -936,3 +935,5 @@ body {
     transform: rotate(360deg);
   }
 }
+
+
